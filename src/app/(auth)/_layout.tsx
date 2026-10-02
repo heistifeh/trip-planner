@@ -11,6 +11,7 @@ export default function AuthLayout() {
         name="signup"
         options={{ title: "Sign Up", headerShown: true }}
       />
+      <Stack.Screen name="otp" options={{ title: "OTP", headerShown: true }} />
     </Stack>
   );
 }

@@ -1,14 +1,20 @@
-import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import TripHome from "@/components/TripHome";
+import { supabase } from "@/lib/supabase";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
+  async function signOut() {
+    const { error } = await supabase.auth.signOut();
+  }
   return (
     <View style={styles.container}>
-      <Text>Trip Planner</Text>
+      {/* <Text>Trip Planner</Text>
+      <Text>YOU ARE SEEING THIS BECAUSE YOU ARE LOGGED IN</Text> */}
 
-      <Link href={"/(auth)/signin"}>
-        <Text style={styles.button}>Go to sign in</Text>
-      </Link>
+      <TripHome />
+      <Pressable onPress={signOut}>
+        <Text>Sign Out</Text>
+      </Pressable>
     </View>
   );
 }
