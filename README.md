@@ -1,4 +1,59 @@
+# Trip Planner
 
+A mobile app for planning trips with friends, built with **Expo** and **React Native**. Sign in with a one-time code, create trips, and keep everyone on the same page.
+
+<p>
+  <img src="https://img.shields.io/badge/React%20Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Native"/>
+  <img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo"/>
+  <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase"/>
+  <img src="https://img.shields.io/badge/TanStack%20Query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white" alt="TanStack Query"/>
+</p>
+
+## Features
+
+- Email OTP sign-in with Supabase Auth and an auth-state listener
+- Trip list and per-trip boards backed by Supabase
+- Each trip has tabs for places to visit, shared costs and to-dos
+- Server data cached and kept fresh with TanStack Query
+- Row Level Security so users only see their own trips
+- File-based navigation with Expo Router
+
+## Tech stack
+
+| Area | Tools |
+|---|---|
+| App | Expo, React Native, Expo Router, TypeScript |
+| Backend | Supabase (Auth, Postgres, RLS) |
+| Data fetching | TanStack Query |
+| Animation | React Native Reanimated, Gesture Handler |
+
+## Running locally
+
+```bash
+git clone https://github.com/heistifeh/trip-planner.git
+cd trip-planner
+npm install
+```
+
+Add a `.env` file:
+
+```bash
+EXPO_PUBLIC_SUPABASE_URL=
+EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
+```
+
+```bash
+npx expo start
+```
+
+## Author
+
+Built by **Boluwatife Osineye**. [Portfolio](https://boluwatifeosineye.com) · [LinkedIn](https://linkedin.com/in/boluwatifeosineye) · [X](https://x.com/tifethedev)
+
+---
+
+<details>
+<summary><b>Development notes</b> (how this app was built, step by step)</summary>
 
 
 I started by creating the out folder, and I worked on the layout. After working on the layout, I defined each screen header as I wanted. Now I am on the sign-in page, trying to set up the form UI so they can sign in. 
@@ -106,3 +161,5 @@ const { data: tripItems } = useQuery({
 
 const places = tripItems?.filter((item) => item.type === "place");
 ```
+
+</details>
